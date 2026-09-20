@@ -1,0 +1,229 @@
+[
+  {
+    "id": "2100003037150683593",
+    "url": "https://x.com/MichaelLee04/status/2100003037150683593",
+    "text": "I got access to Jev earlier today (thank you @hackgoofer).  I have run ~5,000 requests so far, (which cost me around $2!), across classification, model routing, intent, steering, and many other things.\n\ntl;dr, Jev enables a new intelligent decision-making primitive, separate from",
+    "summary": "A cheap model router",
+    "createdAt": "2026-09-15T23:25:14.000Z",
+    "submittedAt": "2026-09-20T15:12:37.227Z",
+    "author": {
+      "name": "Michael",
+      "handle": "MichaelLee04",
+      "avatar": "https://pbs.twimg.com/profile_images/1927516245957423104/f4rjqlIv_400x400.jpg",
+      "verified": true
+    },
+    "stats": {
+      "likes": 3074,
+      "replies": 129,
+      "reposts": 181,
+      "views": 496595
+    },
+    "media": [],
+    "jev": {
+      "job": "routing",
+      "category": "agents",
+      "domain": "agents",
+      "isUseCase": 0.74,
+      "built": 0.55,
+      "usefulness": 2.84,
+      "model": "jev-1.13.0",
+      "title": "router",
+      "isRecap": 0.05
+    },
+    "communityLikes": 0
+  },
+  {
+    "id": "2100577979021832365",
+    "url": "https://x.com/moritzkremb/status/2100577979021832365",
+    "text": "whoa this actually worked! Jev lets me control my browser in real time with my voice now\n\n> i talk\n> transcript sent to Jev\n> jev returns probabilities in ~300ms\n> browser clicks\n\ncosts: $0.0002 per decision\n\ni'm stunned how fast this is. when i asked it to \"go back\", it even https://t.co/Lu1AhZac3r",
+    "summary": "Voice-controlled browsing",
+    "createdAt": "2026-09-17T13:29:51.000Z",
+    "submittedAt": "2026-09-20T15:12:32.630Z",
+    "author": {
+      "name": "Moritz Kremb",
+      "handle": "moritzkremb",
+      "avatar": "https://pbs.twimg.com/profile_images/2092589554997886976/jn-XHoeL_400x400.jpg",
+      "verified": true
+    },
+    "stats": {
+      "likes": 3767,
+      "replies": 105,
+      "reposts": 192,
+      "views": 335336
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2100577954338373633/vid/avc1/1920x1080/f30FtLe23N2iCgyX.mp4?tag=16",
+        "poster": "https://pbs.twimg.com/amplify_video_thumb/2100577954338373633/img/tbH43kHpUotE3hzK.jpg"
+      }
+    ],
+    "jev": {
+      "job": "other",
+      "category": "agents",
+      "domain": "agents",
+      "isUseCase": 0.8,
+      "built": 0.94,
+      "usefulness": 3.98,
+      "model": "jev-1.13.0",
+      "title": "voice_browser",
+      "isRecap": 0.05
+    },
+    "communityLikes": 0
+  },
+  {
+    "id": "2100622054945095934",
+    "url": "https://x.com/kylejeong/status/2100622054945095934",
+    "text": "we built blazing fast computer/browser use with Jev + @Stagehanddev.\n\nthis task cost $0.001 and executed at near instant speed (in a remote browser btw)\n\nthe loop: observe the page, send a11y tree as state + actions as questions, Jev decides the next action, then Stagehand https://t.co/KEOaMx6RHx",
+    "summary": "Computer-use with Jev in the loop",
+    "createdAt": "2026-09-17T16:25:00.000Z",
+    "submittedAt": "2026-09-20T15:12:29.389Z",
+    "author": {
+      "name": "Kyle Jeong",
+      "handle": "kylejeong",
+      "avatar": "https://pbs.twimg.com/profile_images/2059342964816809984/YvJ9VY7X_400x400.jpg",
+      "verified": true
+    },
+    "stats": {
+      "likes": 749,
+      "replies": 29,
+      "reposts": 43,
+      "views": 65601
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2100495119065722880/vid/avc1/3012x2160/ELaeOdE95fA4Ps2R.mp4?tag=29",
+        "poster": "https://pbs.twimg.com/amplify_video_thumb/2100495119065722880/img/7A1mijkU3Z_Zj7PM.jpg"
+      }
+    ],
+    "jev": {
+      "job": "other",
+      "category": "agents",
+      "domain": "agents",
+      "isUseCase": 0.73,
+      "built": 0.9,
+      "usefulness": 3.87,
+      "model": "jev-1.13.0",
+      "title": "computer_use",
+      "isRecap": 0.05
+    },
+    "communityLikes": 0
+  },
+  {
+    "id": "2100780008193020049",
+    "url": "https://x.com/dabit3/status/2100780008193020049",
+    "text": "Another crazy @typesafeai Jev example:\n\nPredictive spreadsheets\n\nSpreadsheets recalculate numbers, not meaning. Jev reads intent.\n\nType \"Urgency\" at the top of a column and, as you type, it figures out you want each row rated from \"no follow-up needed\" to \"urgent\" in ~100 ms. https://t.co/M6REgq4Q8S",
+    "summary": "Spreadsheets that score meaning",
+    "createdAt": "2026-09-18T02:52:39.000Z",
+    "submittedAt": "2026-09-20T14:51:11.312Z",
+    "author": {
+      "name": "nader dabit",
+      "handle": "dabit3",
+      "avatar": "https://pbs.twimg.com/profile_images/1951619597695672321/c1FsysWP_400x400.jpg",
+      "verified": true
+    },
+    "stats": {
+      "likes": 1185,
+      "replies": 38,
+      "reposts": 56,
+      "views": 270918
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2100779722447667200/vid/avc1/1920x1080/z3QL0T2eNCZYQJ6N.mp4?tag=29",
+        "poster": "https://pbs.twimg.com/amplify_video_thumb/2100779722447667200/img/gvsEg2-3oD6FRZhc.jpg"
+      }
+    ],
+    "jev": {
+      "job": "scoring",
+      "category": "ops",
+      "domain": "ops",
+      "isUseCase": 0.56,
+      "built": 0.93,
+      "usefulness": 3.74,
+      "model": "jev-1.13.0",
+      "title": "spreadsheet",
+      "isRecap": 0.05
+    },
+    "communityLikes": 0
+  },
+  {
+    "id": "2100772250181947507",
+    "url": "https://x.com/brainstormity/status/2100772250181947507",
+    "text": "Building a JEV-based Twitter/X sentiment analysis system that fetches recent tweets for an asset (e.g. BTC) and makes a decision to BUY, SELL, or HOLD.\n\nIn my testing, it fetched about 577 tweets and told me to BUY Bitcoin, with a stop loss around $73K.\n\nThe HOLD confidence is https://t.co/XmUPLNGhEI",
+    "summary": "Sentiment that decides buy / sell / hold",
+    "createdAt": "2026-09-18T02:21:49.000Z",
+    "submittedAt": "2026-09-20T14:51:08.545Z",
+    "author": {
+      "name": "brainstormity",
+      "handle": "brainstormity",
+      "avatar": "https://pbs.twimg.com/profile_images/2000243224917458952/qw9llBQ__400x400.jpg",
+      "verified": true
+    },
+    "stats": {
+      "likes": 137,
+      "replies": 11,
+      "reposts": 9,
+      "views": 99754
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HSdwRROWgAA1KM8.jpg"
+      }
+    ],
+    "jev": {
+      "job": "classifying",
+      "category": "agents",
+      "domain": "agents",
+      "isUseCase": 0.6,
+      "built": 0.91,
+      "usefulness": 3.72,
+      "model": "jev-1.13.0",
+      "title": "sentiment",
+      "isRecap": 0.05
+    },
+    "communityLikes": 0
+  },
+  {
+    "id": "2101074194260000982",
+    "url": "https://x.com/robj3d3/status/2101074194260000982",
+    "text": "Jev just solved doomscrolling.\n\nYou pick a niche, Jev reads 3 days of posts and asks 8 questions each.\n\nIt runs in ~2s for $0.007 😅\n\n> removes bait and hidden ads\n> judges the text and like/reply/repost ratios\n\nFree, no signup, go try it then touch grass ↓🌲 https://t.co/DmXB7pQxAR",
+    "summary": "A doomscroll filter",
+    "createdAt": "2026-09-18T22:21:38.000Z",
+    "submittedAt": "2026-09-20T14:51:06.731Z",
+    "author": {
+      "name": "Rob Hallam",
+      "handle": "robj3d3",
+      "avatar": "https://pbs.twimg.com/profile_images/1763174758416588801/DMB7OfRz_400x400.png",
+      "verified": true
+    },
+    "stats": {
+      "likes": 1632,
+      "replies": 78,
+      "reposts": 68,
+      "views": 163993
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2101071392385236992/vid/avc1/3840x2160/IUKbg17ZoYR7Cohu.mp4?tag=29",
+        "poster": "https://pbs.twimg.com/amplify_video_thumb/2101071392385236992/img/CEKcs7SuhRGA5TTV.jpg"
+      }
+    ],
+    "jev": {
+      "job": "scoring",
+      "category": "feeds",
+      "domain": "feeds",
+      "isUseCase": 0.51,
+      "built": 0.91,
+      "usefulness": 3.88,
+      "model": "jev-1.13.0",
+      "title": "doomscroll",
+      "isRecap": 0.05
+    },
+    "communityLikes": 0
+  }
+]

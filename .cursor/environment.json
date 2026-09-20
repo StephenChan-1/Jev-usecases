@@ -1,0 +1,13 @@
+{
+  "name": "Jev use cases",
+  "user": "ubuntu",
+  "install": "bash .cursor/install.sh",
+  "start": "bash .cursor/start.sh",
+  "terminals": [
+    {
+      "name": "dev",
+      "command": "set -a; source \"$HOME/.jev-cases.env\"; set +a; npm run dev -- --host"
+    }
+  ],
+  "ports": [5173]
+}

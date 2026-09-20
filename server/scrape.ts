@@ -30,6 +30,7 @@ export async function decodeTweet(
   try {
     response = await fetch(endpoint, {
       headers: { 'x-api-key': apiKey },
+      signal: AbortSignal.timeout(12_000),
     })
   } catch (error) {
     const detail = error instanceof Error ? error.message : 'network error'

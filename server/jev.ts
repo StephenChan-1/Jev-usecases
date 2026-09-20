@@ -74,7 +74,8 @@ export async function summarizeWithJev(
         Authorization: `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
+        signal: AbortSignal.timeout(15_000),
+        body: JSON.stringify({
         model: 'jev-latest',
         state: {
           author: record.author.name,

@@ -4,8 +4,14 @@ import { summarizeWithJev, isBuilderCase } from './jev.ts'
 import { decodeTweet } from './scrape.ts'
 import { getCase, listCases, toggleLike, upsertCase } from './store.ts'
 import type { ApiKeys, CaseSort } from './types.ts'
+import { extractTweetId } from './x.ts'
 
 async function ingest(url: string, keys: ApiKeys) {
+  const existingId = extractTweetId(url)
+  if (existingId) {
+    const existing = await getCase(existingId)
+    if (existing) return existing
+  }
   const decoded = await decodeTweet(url, keys.scrape)
   const summarised = await summarizeWithJev(decoded, keys.typesafe)
   if (!isBuilderCase(summarised)) {
@@ -22,6 +28,17 @@ async function ingest(url: string, keys: ApiKeys) {
 type Json = Record<string, unknown>
 
 async function readJson(req: IncomingMessage): Promise<Json> {
+  const preloaded = (req as IncomingMessage & { body?: unknown }).body
+  if (typeof preloaded === 'string' && preloaded.trim()) {
+    try {
+      return JSON.parse(preloaded) as Json
+    } catch {
+      throw Object.assign(new Error('Body must be JSON.'), { status: 400 })
+    }
+  }
+  if (preloaded && typeof preloaded === 'object' && !Buffer.isBuffer(preloaded)) {
+    return preloaded as Json
+  }
   const chunks: Buffer[] = []
   for await (const chunk of req) {
     chunks.push(typeof chunk === 'string' ? Buffer.from(chunk) : chunk)

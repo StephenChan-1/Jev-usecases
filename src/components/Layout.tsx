@@ -8,8 +8,7 @@ export function Layout() {
           Jev use cases<span>.</span>
         </Link>
         <p>
-          Paste an X link. Jev names the build. The feed is real TypeSafe Jev
-          cases from X — what you can actually ship, and who to follow.
+          Jev use cases in one hub. Too much cool stuff being built as we speak.
         </p>
       </header>
       <main className="stage">

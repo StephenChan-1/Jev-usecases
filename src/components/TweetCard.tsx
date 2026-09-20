@@ -4,14 +4,12 @@ import { compactNumber, relativeTime } from '../format.ts'
 
 export function TweetCard({
   record,
-  span,
   onLike,
 }: {
   record: CaseRecord
-  span: number
   onLike: (id: string) => void
 }) {
-  const excerpt = record.text.replace(/\s+/g, ' ').trim()
+  const excerpt = record.text.trim()
   const photo = record.media.find((item) => item.type === 'photo') ?? record.media[0]
   const jev = record.jev
   const headline =
@@ -20,7 +18,7 @@ export function TweetCard({
     excerpt
 
   return (
-    <article className={`card span-${span}`}>
+    <article className="card">
       <a className="card-body" href={record.url} target="_blank" rel="noreferrer">
         <div className="tags">
           <span>{label(CATEGORY, jev?.category || jev?.domain, 'Category')}</span>

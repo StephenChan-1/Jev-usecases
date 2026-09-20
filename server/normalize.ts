@@ -90,6 +90,19 @@ function decodeEntities(value: string): string {
     .replaceAll('&#39;', "'")
 }
 
+function pickText(tweet: Json, legacy: Json): string {
+  const note = asRecord(tweet.note_tweet)
+  const noteResults = asRecord(note?.note_tweet_results)
+  const noteResult = asRecord(noteResults?.result)
+  const long =
+    str(noteResult?.text) ||
+    str(asRecord(tweet.note_tweet)?.text) ||
+    str(tweet.full_text)
+  return decodeEntities(
+    long || str(legacy.full_text) || str(legacy.text) || str(tweet.text),
+  )
+}
+
 export function tweetToCase(raw: unknown, sourceUrl: string): CaseRecord {
   const root = asRecord(raw)
   if (!root) throw new Error('Unexpected tweet payload')
@@ -120,7 +133,7 @@ export function tweetToCase(raw: unknown, sourceUrl: string): CaseRecord {
   return {
     id: tweetId,
     url: canonicalTweetUrl(sourceUrl, handle, tweetId),
-    text: decodeEntities(str(legacy.full_text) || str(legacy.text) || str(tweet.text)),
+    text: pickText(tweet, legacy),
     summary: '',
     communityLikes: 0,
     createdAt: isoFromTwitterDate(legacy.created_at ?? tweet.created_at),

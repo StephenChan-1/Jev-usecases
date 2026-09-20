@@ -35,7 +35,7 @@ export function DropBar({
           autoFocus={autoFocus}
           value={url}
           onChange={(event) => setUrl(event.target.value)}
-          placeholder="Paste an x.com/status/… link to a Jev build"
+          placeholder="Paste an X link"
           aria-label="X post URL"
           inputMode="url"
           autoComplete="url"

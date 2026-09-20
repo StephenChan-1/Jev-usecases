@@ -43,10 +43,10 @@ export function isBuilderCase(record: CaseRecord): boolean {
   if (!jev) return false
   if (jev.job === 'unrelated') return false
   const built = jev.built ?? (jev.isUseCase >= 0.5 ? 0.55 : 0)
-  if (jev.usefulness < 2.5) return false
-  if (built < 0.28) return false
-  if (jev.isUseCase < 0.35) return false
-  if ((jev.isRecap ?? 0) >= 0.45) return false
+  if (jev.usefulness < 2.2) return false
+  if (built < 0.18) return false
+  if (jev.isUseCase < 0.3) return false
+  if ((jev.isRecap ?? 0) >= 0.55) return false
   return true
 }
 
@@ -86,21 +86,22 @@ export async function summarizeWithJev(
           is_use_case: {
             type: 'noul',
             instructions:
-              'Did someone actually run Jev on a real workflow in this post?',
+              'Did a person or team use Jev as part of a real job (agents, SEO, routing, scoring, a product), not just explain what Jev is?',
           },
           built: {
             type: 'noul',
             instructions:
-              'Did they show a product, demo, or script that calls Jev and say what it does?',
+              'Did they describe Jev inside their own workflow or product? A cost or speed story about their agents counts as built even with no code screenshot. Explainer threads and waitlists do not.',
           },
           is_recap: {
             type: 'noul',
             instructions:
-              'Is this launch news, funding, vague hype, or a random Jev mention with no build?',
+              'High only for what-is-Jev explainers, waitlists, funding, launch hype, or a name-drop with no workflow. Low if they say Jev changed a job they actually run.',
           },
           job: {
             type: 'choice',
-            instructions: 'What is Jev doing? unrelated if it is not a Jev build.',
+            instructions:
+              'What is Jev doing in their workflow? unrelated only if they are not using Jev as a tool.',
             criteria: JOB_CRITERIA,
           },
           category: {
@@ -118,7 +119,7 @@ export async function summarizeWithJev(
           usefulness: {
             type: 'score',
             instructions:
-              'How useful is this as a real Jev use case for someone deciding what to build?',
+              'How useful is this as a real Jev use case? A named workflow with cost or speed counts, even without source code.',
             criteria: [
               'Random or off-topic',
               'Jev is mentioned, nothing was built',
@@ -136,7 +137,9 @@ export async function summarizeWithJev(
       unknown
     > | null
     if (!response.ok) {
-      return { ...record, summary: firstSentence(record) }
+      throw Object.assign(new Error('Jev is unavailable. Try again in a moment.'), {
+        status: 503,
+      })
     }
 
     const answers = asRecord(payload?.answers) ?? {}
@@ -154,7 +157,10 @@ export async function summarizeWithJev(
     }
 
     return { ...record, summary: compose(record, jev), jev }
-  } catch {
-    return { ...record, summary: firstSentence(record) }
+  } catch (error) {
+    if (error && typeof error === 'object' && 'status' in error) throw error
+    throw Object.assign(new Error('Jev is unavailable. Try again in a moment.'), {
+      status: 503,
+    })
   }
 }

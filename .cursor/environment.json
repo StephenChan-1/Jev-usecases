@@ -6,7 +6,7 @@
   "terminals": [
     {
       "name": "dev",
-      "command": "set -a; source \"$HOME/.jev-cases.env\"; set +a; npm run dev -- --host"
+      "command": "[ -f \"$HOME/.jev-cases.env\" ] || bash .cursor/start.sh; set -a; source \"$HOME/.jev-cases.env\"; set +a; npm run dev -- --host"
     }
   ],
   "ports": [5173]
